@@ -19,5 +19,10 @@ pipeline {
         )
       }
     }
+    stage('SonarQube Quality Gate') {
+      steps {
+        waitForQualityGate()
+      }
+    }
   }
 }
