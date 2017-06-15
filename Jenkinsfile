@@ -24,5 +24,15 @@ pipeline {
         build 'quals-build-cq-search'
       }
     }
+    stage('build-cq-workflows') {
+      steps {
+        build 'quals-build-cq-workflows'
+      }
+    }
+    stage('build-web-strategy') {
+      steps {
+        build 'quals-build-web-strategy'
+      }
+    }
   }
 }
