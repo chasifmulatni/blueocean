@@ -11,6 +11,10 @@ pipeline {
           "sonar-cq-workflows": {
             build 'quals-sonar-cq-workflows'
             
+          },
+          "sonar-web-strategy": {
+            build 'quals-sonar-cq-web-strategy'
+            
           }
         )
       }
