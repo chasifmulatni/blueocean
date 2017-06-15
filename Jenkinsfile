@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('sonar-cq-search') {
       steps {
-        build 'quals-sonar-cq-search'
+        parallel(
+          "sonar-cq-search": {
+            build 'quals-sonar-cq-search'
+            
+          },
+          "sonar-cq-workflows": {
+            build 'quals-sonar-cq-workflows'
+            
+          }
+        )
       }
     }
   }
