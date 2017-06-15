@@ -1,7 +1,7 @@
 pipeline {
   agent none
   stages {
-    stage('sonar') {
+    stage('sonar-cq-search') {
       steps {
         build 'quals-sonar-cq-search'
       }
