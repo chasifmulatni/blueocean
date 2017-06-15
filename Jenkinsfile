@@ -19,6 +19,10 @@ pipeline {
         )
       }
     }
- 
+    stage('build-cq-search') {
+      steps {
+        build 'quals-build-cq-search'
+      }
+    }
   }
 }
