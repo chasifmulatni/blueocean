@@ -19,10 +19,5 @@ pipeline {
         )
       }
     }
-    stage('') {
-      steps {
-        waitForQualityGate()
-      }
-    }
   }
 }
