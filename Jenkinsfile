@@ -19,19 +19,36 @@ pipeline {
         )
       }
     }
-    stage('build-cq-search') {
+	stage('build-cq-search') {
       steps {
-        build 'quals-build-cq-search'
+        parallel(
+          "build-cq-search": {
+            build 'quals-build-cq-search'
+            
+          },
+          "build-cq-workflows": {
+            build 'quals-build-cq-workflows'
+            
+          },
+          "build-web-strategy": {
+            build 'quals-build-web-strategy' 
+          }
+        )
       }
     }
-    stage('build-cq-workflows') {
+    stage('	deploy-quals-cq-search-pre-dev') {
       steps {
-        build 'quals-build-cq-workflows'
+        build '	deploy-quals-cq-search-pre-dev'
       }
     }
-    stage('build-web-strategy') {
+    stage('deploy-quals-cq-workflows-pre-dev') {
       steps {
-        build 'quals-build-web-strategy'
+        build 'deploy-quals-cq-workflows-pre-dev'
+      }
+    }
+    stage('deploy-quals-web-stratgey-pre-dev') {
+      steps {
+        build 'deploy-quals-web-stratgey-pre-dev'
       }
     }
   }
