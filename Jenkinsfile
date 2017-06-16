@@ -39,7 +39,7 @@ pipeline {
     }
     stage('	deploy-quals-cq-search-pre-dev') {
       steps {
-        build '	deploy-quals-cq-search-pre-dev'
+        build 'deploy-quals-cq-search-pre-dev'
       }
     }
     stage('deploy-quals-cq-workflows-pre-dev') {
