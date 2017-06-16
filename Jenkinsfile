@@ -19,10 +19,10 @@ pipeline {
         )
       }
     }
-	stage('build-cq-search') {
+    stage('build-cq-search') {
       steps {
         parallel(
-          "build-cq-search": {
+          "build-jobs": {
             build 'quals-build-cq-search'
             
           },
@@ -31,7 +31,8 @@ pipeline {
             
           },
           "build-web-strategy": {
-            build 'quals-build-web-strategy' 
+            build 'quals-build-cq-web-strategy'
+            
           }
         )
       }
